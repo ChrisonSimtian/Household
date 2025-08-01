@@ -1,0 +1,18 @@
+<!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+<Project>
+    <PropertyGroup Label="Properties: Variables">
+        <SolutionName>Household</SolutionName>
+        <RootDirectory>$(MSBuildThisFileDirectory)</RootDirectory>
+        <SourceDirectory>$(MSBuildThisFileDirectory)/src</SourceDirectory>
+        <TestsDirectory>$(MSBuildThisFileDirectory)/tests</TestsDirectory>
+    </PropertyGroup>
+    <PropertyGroup Label="Properties: Common">
+        <TargetFramework>net10.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <RootNamespace>$(SolutionName)</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings> 
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+</Project>
