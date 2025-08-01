@@ -13,6 +13,8 @@ using Household.Exceptions;
 /// <param name="accountName"></param>
 public class BankAccount(Guid id, string accountNumber, string bankName, string accountName)
 {
+    private readonly List<Transaction> _transactions = [];
+    
     public Guid Id { get; private set; } = id;
     public string AccountNumber { get; private set; } = accountNumber;
     public string BankName { get; private set; } = bankName;
@@ -22,10 +24,10 @@ public class BankAccount(Guid id, string accountNumber, string bankName, string 
     public decimal OverdraftLimit { get; private set; } = 0;
 
     // Instead of storing a Balance field, we calculate it from Transactions.
-    public decimal Balance => CalculateBalance();
+    public decimal Balance => CalculateBalance(_transactions);
 
     // Collection of transactions related to this account.
-    private readonly List<Transaction> _transactions = [];
+    
     public IReadOnlyCollection<Transaction> Transactions => _transactions.AsReadOnly();
 
 
@@ -41,8 +43,7 @@ public class BankAccount(Guid id, string accountNumber, string bankName, string 
         return AddTransaction(transaction.Amount, transaction.Type, transaction.Description, transaction.Date);
     }
 
-    public Transaction AddTransaction(decimal amount, TransactionType type, string description)
-        => AddTransaction(amount, type, description, DateTime.Now);
+    public Transaction AddTransaction(decimal amount, TransactionType type, string description) => AddTransaction(amount, type, description, DateTime.Now);
 
     /// <summary>
     /// Adds a transaction to the account.
@@ -68,10 +69,10 @@ public class BankAccount(Guid id, string accountNumber, string bankName, string 
     }
 
     // A helper method that computes the current balance based on the transactions history.
-    private decimal CalculateBalance()
+    private static decimal CalculateBalance(IEnumerable<Transaction> transactions)
     {
         decimal balance = 0;
-        foreach (var transaction in _transactions)
+        foreach (var transaction in transactions)
         {
             balance += transaction.Type == TransactionType.Credit ? transaction.Amount : -transaction.Amount;
         }

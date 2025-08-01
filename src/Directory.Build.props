@@ -1,4 +1,21 @@
 <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
 <Project>
     <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+        <ItemGroup Label="ItemGroup: Analyzers">
+        <!--This
+        is Microsoft’s analyzer that deals with Threading errors and problems.-->
+        <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.14.15">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Threading.Only" Version="17.14.15" />
+        <!--A
+        Roslyn analyzer to enforce some good practices in C# in terms of design, usage, security,
+        performance, and style.-->
+        <PackageReference Include="Meziantou.Analyzer" Version="2.0.210">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 </Project>
