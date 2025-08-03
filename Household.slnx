@@ -8,6 +8,7 @@
   <Folder Name="/src/Infrastructure/">
   </Folder>
   <Folder Name="/src/Persistence/">
+    <Project Path="src/Persistence/CosmosDB/Household.Persistence.CosmosDB.csproj" />
   </Folder>
   <Folder Name="/src/Presentation/">
   </Folder>
@@ -31,6 +32,10 @@
   <Folder Name="/tests/Infrastructure/">
   </Folder>
   <Folder Name="/tests/Persistence/">
+    <Project Path="tests/Persistence/CosmosDB/Household.Persistence.CosmosDB.Tests.csproj" />
+    <Project Path="tests/Persistence/EFCore/Household.Persistence.EFCore.Tests.csproj" />
+    <Project Path="tests/Persistence/SQLite/Household.Persistence.SQLite.Tests.csproj" />
+    <Project Path="tests/Persistence/SQLServer/Household.Persistence.SQLServer.Tests.csproj" />
   </Folder>
   <Folder Name="/tests/Presentation/">
   </Folder>

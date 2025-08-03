@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Persistence\CosmosDB\Household.Persistence.CosmosDB.csproj" />
+    <ProjectReference Include="..\EFCore\Household.Persistence.EFCore.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Cosmos" Version="9.0.7" />
+  </ItemGroup>
+
+</Project>
