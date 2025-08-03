@@ -1,4 +1,4 @@
-using Banking;
+using Household;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -13,4 +13,4 @@ builder.Services.AddMsalAuthentication(options =>
     builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
 });
 
-await builder.Build().RunAsync();
+await builder.Build().RunAsync().ConfigureAwait(true);
