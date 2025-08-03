@@ -1,0 +1,16 @@
+services:
+  sql-server:
+    container_name: sql-server
+    env_file:
+      - .env
+    restart: unless-stopped
+    # volumes:
+    #   - ./data:/var/opt/mssql # Persist data across container restarts
+    image: mcr.microsoft.com/mssql/server:latest
+    ports:
+      - "1433:1433" # SQL Server port.
+    healthcheck:
+      test: ["CMD", "sqlcmd", "-U", "sa", "-P", "YourStrong!Passw0rd", "-Q", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
