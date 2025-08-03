@@ -1,5 +1,13 @@
 # TODO List
 
+## Architecture
+
+[ ] Add Persistence Layer
+    [ ] CosmosDB
+    [ ] SQLite
+    [ ] SQL Server
+    [ ] Blob Storage
+
 ## Create script for Azure Function App
 
 [ ] Rename App Service Plan
