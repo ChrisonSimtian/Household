@@ -11,6 +11,17 @@
   </Folder>
   <Folder Name="/src/Presentation/">
   </Folder>
+  <Folder Name="/src/Presentation/Agent/">
+    <Project Path="src/Presentation/Agent/Banking/Household.Presentation.Agent.Banking.csproj" Id="087c9b4a-7ee2-4e62-8193-332935542ca0" />
+  </Folder>
+  <Folder Name="/src/Presentation/Api/">
+    <Project Path="src/Presentation/Api/Banking/Household.Presentation.Api.Banking.csproj" Id="5fb6e411-2086-4c8c-92e9-58167395c45f" />
+  </Folder>
+  <Folder Name="/src/Presentation/ApiClient/">
+  </Folder>
+  <Folder Name="/src/Presentation/Web/">
+    <Project Path="src/Presentation/Web/Banking/Household.Presentation.Web.Banking.csproj" Id="8029d493-e1fd-4645-839a-815fb745c563" />
+  </Folder>
   <Folder Name="/tests/" />
   <Folder Name="/tests/Application/">
   </Folder>
@@ -22,5 +33,13 @@
   <Folder Name="/tests/Persistence/">
   </Folder>
   <Folder Name="/tests/Presentation/">
+  </Folder>
+  <Folder Name="/tests/Presentation/Agent/">
+  </Folder>
+  <Folder Name="/tests/Presentation/Api/">
+  </Folder>
+  <Folder Name="/tests/Presentation/ApiClient/">
+  </Folder>
+  <Folder Name="/tests/Presentation/Web/">
   </Folder>
 </Solution>

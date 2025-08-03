@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Household.Presentation.Agent.Banking": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7132",
+      "launchBrowser": false
+    }
+  }
+}
